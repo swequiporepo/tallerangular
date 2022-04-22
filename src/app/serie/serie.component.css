@@ -1,0 +1,12 @@
+.bg-light-gray{
+  background-color: #F2F2F2;
+}
+
+.hidden{
+  display: none;
+}
+
+.link{
+  color: #548EDF;
+  cursor: pointer;
+}

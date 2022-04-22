@@ -5,31 +5,32 @@ import { DebugElement } from '@angular/core';
 import { faker } from '@faker-js/faker';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CourseComponent } from './course.component';
-import { CourseService } from './course.service';
-import { Course } from './course';
+import { SerieComponent } from './serie.component';
+import { SerieService } from './serie.service';
+import { Serie } from './serie';
 
 
 describe('BookListComponent', () => {
-  let component: CourseComponent;
-  let fixture: ComponentFixture<CourseComponent>;
+  let component: SerieComponent;
+  let fixture: ComponentFixture<SerieComponent>;
   let debug: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ CourseComponent ],
-      providers: [ CourseService ]
+      declarations: [ SerieComponent ],
+      providers: [ SerieService ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CourseComponent);
+    fixture = TestBed.createComponent(SerieComponent);
     component = fixture.componentInstance;
 
-    component.courses = [
-      new Course(faker.lorem.sentence(), faker.name.firstName(), faker.datatype.number())
+    component.series = [
+      new Serie(faker.datatype.number(), faker.lorem.sentence(), faker.lorem.sentence(),
+      faker.datatype.number(), faker.lorem.sentence(),faker.internet.url(),faker.internet.url())
     ]
 
     fixture.detectChanges();
@@ -42,12 +43,6 @@ describe('BookListComponent', () => {
 
   it("Component has a table", () => {
     expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
-  });
-
-  it('should have an dd element ', () => {
-    const dd = debug.query(By.css('dd'));
-    const content: HTMLElement = dd.nativeElement;
-    expect(content.textContent).toEqual(component.courses[0].name)
   });
 
 });

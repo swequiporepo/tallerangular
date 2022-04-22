@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { CourseComponent } from './course/course.component';
+import { SerieComponent } from './serie/serie.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
         RouterTestingModule, HttpClientModule
       ],
       declarations: [
-        AppComponent, CourseComponent
+        AppComponent, SerieComponent
       ],
     }).compileComponents();
   });

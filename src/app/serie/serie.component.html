@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <table class="table">
+              <thead class="thead">
+                 <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Channel</th>
+                    <th>Seasons</th>
+                 </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-light-gray" *ngFor="let serie of series">
+                  <td>
+                    <strong>{{serie.id}}</strong>
+                  </td>
+                  <td>
+                    <span class="link" (click)="clickSerie(serie.id-1)">{{serie.name}}</span>
+                  </td>
+                  <td>
+                    {{serie.channel}}
+                  </td>
+                  <td>
+                    {{serie.seasons}}
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+          <p>Seasons average: {{ average }}</p>
+      </div>
+      <div class="col">
+          <div class="card hidden" style="width: 18rem;" id="card">
+              <img class="card-img-top" src="{{dataVistas.imageUrl}}">
+              <div class="card-body">
+                <h5 class="card-title">{{dataVistas.name}}</h5>
+                <p class="card-text">{{dataVistas.description}}</p>
+                <a href="{{dataVistas.page}}">{{dataVistas.page}}</a>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
